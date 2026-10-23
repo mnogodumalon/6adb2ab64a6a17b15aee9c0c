@@ -20,6 +20,7 @@
 import type { ComponentType } from 'react';
 
 // <custom:intent-imports>
+import { IconCalendarPlus, IconCircleCheck, IconCash, IconCheckbox } from '@tabler/icons-react';
 // </custom:intent-imports>
 
 export interface IntentLink {
@@ -42,6 +43,10 @@ export interface IntentLink {
 
 export const INTENTS: IntentLink[] = [
   // <custom:intents>
+  { path: '/intents/buchung-anlegen', label: { de: 'Buchung anlegen', en: 'Create booking' }, icon: IconCalendarPlus, description: 'Rezeption legt für einen Gast eine Buchung mit freiem Zimmer und Zusatzleistungen an.' },
+  { path: '/intents/anfrage-bearbeiten', label: { de: 'Buchungsanfrage bestätigen oder ablehnen', en: 'Process booking request' }, icon: IconCircleCheck, description: 'Offene Anfragen von der Website prüfen und bestätigen oder stornieren.' },
+  { path: '/intents/zahlung-erfassen', label: { de: 'Zahlung erfassen', en: 'Record payment' }, icon: IconCash, description: 'Für eine bestätigte Buchung Anzahlung oder vollständige Zahlung vermerken.' },
+  { path: '/intents/aufenthalt-abschliessen', label: { de: 'Aufenthalt abschließen', en: 'Complete stay' }, icon: IconCheckbox, description: 'Nach der Abreise die Buchung abschließen.' },
   // </custom:intents>
 ];
 
@@ -52,7 +57,7 @@ export const INTENTS: IntentLink[] = [
  * purpose — a scaffold update resets it to false (self-healing if Phase 2
  * never ran).
  */
-export const INTENTS_PENDING = true;
+export const INTENTS_PENDING = false;
 
 /**
  * When the Phase-1 bundle was deployed (ISO, set by the service together with

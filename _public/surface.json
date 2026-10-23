@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "slug": "unterkunft-buchen",
+      "component": "UnterkunftBuchen",
+      "title": "Unterkunft buchen",
+      "endpoints": [
+        {
+          "entity": "zimmer",
+          "op": "list",
+          "fields": [
+            "bezeichnung",
+            "zimmerart",
+            "max_personen",
+            "preis_pro_nacht",
+            "ausstattung",
+            "beschreibung",
+            "foto"
+          ],
+          "scope": "r.v_verfuegbar == True",
+          "scope_description": "zeigt nur Zimmer, die zur Buchung verfügbar sind",
+          "max_records": 200
+        },
+        {
+          "entity": "zusatzleistungen",
+          "op": "list",
+          "fields": [
+            "leistung_bezeichnung",
+            "leistung_beschreibung",
+            "leistung_preis",
+            "abrechnungsart"
+          ],
+          "max_records": 200
+        },
+        {
+          "entity": "buchungen",
+          "op": "create",
+          "fields": [
+            "gast",
+            "zimmer",
+            "anreise",
+            "abreise",
+            "anzahl_personen",
+            "zusatzleistungen",
+            "wuensche"
+          ],
+          "preset_fields": {
+            "buchungsstatus": "angefragt",
+            "zahlungsstatus": "offen"
+          }
+        },
+        {
+          "entity": "gaeste",
+          "op": "create",
+          "fields": [
+            "gast_vorname",
+            "gast_nachname",
+            "gast_email",
+            "gast_telefon",
+            "strasse",
+            "hausnummer",
+            "plz",
+            "ort",
+            "land"
+          ]
+        }
+      ]
+    }
+  ]
+}
