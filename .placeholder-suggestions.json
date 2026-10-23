@@ -1,0 +1,33 @@
+{
+  "ZimmerDialog.tsx": {
+    "zimmernummer": "z. B. 101",
+    "bezeichnung": "z. B. Zimmer mit Seeblick",
+    "max_personen": "z. B. 2",
+    "preis_pro_nacht": "z. B. 89",
+    "beschreibung": "Was zeichnet das Zimmer aus?"
+  },
+  "ZusatzleistungenDialog.tsx": {
+    "leistung_bezeichnung": "z. B. Frühstücksbuffet",
+    "leistung_beschreibung": "Was ist enthalten?",
+    "leistung_preis": "z. B. 12,50"
+  },
+  "GaesteDialog.tsx": {
+    "gast_vorname": "z. B. Anna",
+    "gast_nachname": "z. B. Müller",
+    "gast_email": "z. B. anna.mueller@example.de",
+    "strasse": "z. B. Lindenweg",
+    "hausnummer": "z. B. 12a",
+    "plz": "z. B. 80331",
+    "ort": "z. B. München",
+    "land": "z. B. Deutschland"
+  },
+  "BuchungenDialog.tsx": {
+    "gast": "Welcher Gast?",
+    "zimmer": "Welches Zimmer?",
+    "anreise": "Wann reist der Gast an?",
+    "abreise": "Wann reist der Gast ab?",
+    "anzahl_personen": "z. B. 2",
+    "zusatzleistungen": "Welche Zusatzleistungen?",
+    "wuensche": "Wünsche, Allergien, Anreisezeit"
+  }
+}

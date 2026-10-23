@@ -1,0 +1,33 @@
+{
+  "pages": {
+    "en": {
+      "Abreise": "Departure",
+      "Abreisen (7 Tage)": "Departures (7 days)",
+      "Abschließen": "Complete",
+      "Alle Zahlungen sind beglichen.": "All payments have been settled.",
+      "Als Nächstes reist {0} an ({1}).": "Next arrival: {0} ({1}).",
+      "An- & Abreisen bis {0}": "Arrivals & departures until {0}",
+      "Anreise": "Arrival",
+      "Anreisen (7 Tage)": "Arrivals (7 days)",
+      "Belegte Zimmer": "Occupied rooms",
+      "Bestätigen": "Confirm",
+      "Bezahlt": "Paid",
+      "Gerade ist alles ruhig — keine Anreisen oder offenen Anfragen.": "All quiet right now — no arrivals or open requests.",
+      "Keine An- oder Abreisen in den nächsten 7 Tagen.": "No arrivals or departures in the next 7 days.",
+      "Neue Buchung": "New booking",
+      "Neue Buchungsanfrage von {0} — Anreise {1}.": "New booking request from {0} — arrival {1}.",
+      "Offen": "Outstanding",
+      "Offene Zahlung: {0}.": "Outstanding payment: {0}.",
+      "Offene Zahlungen": "Outstanding payments",
+      "Ohne Gast": "No guest",
+      "heute": "today",
+      "morgen": "tomorrow",
+      "{0} bestätigen": "Confirm {0}",
+      "{0} offene Buchungsanfragen, zuerst {1} (Anreise {2}).": "{0} open booking requests, first {1} (arrival {2}).",
+      "{0} reist als Nächstes ab ({1}).": "Next departure: {0} ({1}).",
+      "{0} warten auf deine Bestätigung.": "{0} awaiting your confirmation.",
+      "{0} — Zahlung erfasst": "{0} — Payment recorded"
+    }
+  },
+  "v": 1
+}
