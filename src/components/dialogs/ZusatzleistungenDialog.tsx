@@ -311,7 +311,7 @@ export function ZusatzleistungenDialog({ open, onClose, onSubmit, defaultValues,
         <Label htmlFor="leistung_bezeichnung">{fieldLabel('zusatzleistungen', 'leistung_bezeichnung')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Input
           id="leistung_bezeichnung"
-          placeholder="z. B. Frühstücksbuffet"
+          placeholder=""
           value={fields.leistung_bezeichnung ?? ''}
           onChange={e => setFields(f => ({ ...f, leistung_bezeichnung: e.target.value }))}
           required
@@ -326,7 +326,7 @@ export function ZusatzleistungenDialog({ open, onClose, onSubmit, defaultValues,
         <Label htmlFor="leistung_beschreibung">{fieldLabel('zusatzleistungen', 'leistung_beschreibung')}</Label>
         <Textarea
           id="leistung_beschreibung"
-          placeholder="Was ist enthalten?"
+          placeholder=""
           value={fields.leistung_beschreibung ?? ''}
           onChange={e => setFields(f => ({ ...f, leistung_beschreibung: e.target.value }))}
           rows={3}
@@ -342,7 +342,7 @@ export function ZusatzleistungenDialog({ open, onClose, onSubmit, defaultValues,
           inputMode="decimal"
           step="any"
           {...numberInputProps(formEnhancements, 'leistung_preis')}
-          placeholder="z. B. 12,50"
+          placeholder=""
           value={fields.leistung_preis !== undefined ? fields.leistung_preis : (computedValues['leistung_preis'] ?? '')}
           onChange={e => setFields(f => ({ ...f, leistung_preis: clampNumberValue(formEnhancements, 'leistung_preis', e.target.value) }))}
         />

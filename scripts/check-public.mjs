@@ -547,16 +547,10 @@ function checkEndpoint(slug, ep, pageSrc, pageFile, where = SURFACE) {
   }
   // file fields: READING is fine — a file URL answers an anonymous GET with
   // 200 and `cache-control: public` (measured), so a listed logo or hero
-  // image simply renders. UPLOADING is not: /files is not grantable, so a
-  // visitor has nowhere to put the bytes and the service rejects the page.
-  if (ep.op === 'create' && Array.isArray(ep.fields) && appMeta) {
-    const controls = appMeta.apps?.[ep.entity]?.controls || {};
-    for (const key of ep.fields) {
-      if (controls[key]?.fulltype?.startsWith('file')) {
-        errors.push(`${where}: page '${slug}' endpoint '${ep.entity}' asks visitors to submit file field '${key}' — anonymous UPLOAD is impossible (/files is not grantable); drop it from the create endpoint (listing a file field for DISPLAY is fine)`);
-      }
-    }
-  }
+  // image simply renders. UPLOADING works too (probed 20.10.2026): a file
+  // field in a create endpoint takes the file as a data URL — the page binds
+  // it with <FileField {...form.file(key)} /> (Bound does it by kind), which
+  // limits type and size. /files and attachments stay ungrantable.
   // preset_fields are server-owned — a key listed in fields too would make
   // the visitor's value win, defeating the preset.
   const epFields = ep.fields || [];

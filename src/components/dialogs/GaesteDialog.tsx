@@ -289,7 +289,7 @@ export function GaesteDialog({ open, onClose, onSubmit, defaultValues, recordId,
         <Label htmlFor="gast_vorname">{fieldLabel('gaeste', 'gast_vorname')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Input
           id="gast_vorname"
-          placeholder="z. B. Anna"
+          placeholder=""
           value={fields.gast_vorname ?? ''}
           onChange={e => setFields(f => ({ ...f, gast_vorname: e.target.value }))}
           required
@@ -304,7 +304,7 @@ export function GaesteDialog({ open, onClose, onSubmit, defaultValues, recordId,
         <Label htmlFor="gast_nachname">{fieldLabel('gaeste', 'gast_nachname')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Input
           id="gast_nachname"
-          placeholder="z. B. Müller"
+          placeholder=""
           value={fields.gast_nachname ?? ''}
           onChange={e => setFields(f => ({ ...f, gast_nachname: e.target.value }))}
           required
@@ -321,7 +321,7 @@ export function GaesteDialog({ open, onClose, onSubmit, defaultValues, recordId,
           id="gast_email"
           type="email"
           inputMode="email"
-          placeholder="z. B. anna.mueller@example.de"
+          placeholder=""
           value={fields.gast_email ?? ''}
           onChange={e => setFields(f => ({ ...f, gast_email: e.target.value }))}
           required
@@ -349,7 +349,7 @@ export function GaesteDialog({ open, onClose, onSubmit, defaultValues, recordId,
         <Label htmlFor="strasse">{fieldLabel('gaeste', 'strasse')}</Label>
         <Input
           id="strasse"
-          placeholder="z. B. Lindenweg"
+          placeholder=""
           value={fields.strasse ?? ''}
           onChange={e => setFields(f => ({ ...f, strasse: e.target.value }))}
         />
@@ -360,7 +360,7 @@ export function GaesteDialog({ open, onClose, onSubmit, defaultValues, recordId,
         <Label htmlFor="hausnummer">{fieldLabel('gaeste', 'hausnummer')}</Label>
         <Input
           id="hausnummer"
-          placeholder="z. B. 12a"
+          placeholder=""
           value={fields.hausnummer ?? ''}
           onChange={e => setFields(f => ({ ...f, hausnummer: e.target.value }))}
         />
@@ -371,7 +371,7 @@ export function GaesteDialog({ open, onClose, onSubmit, defaultValues, recordId,
         <Label htmlFor="plz">{fieldLabel('gaeste', 'plz')}</Label>
         <Input
           id="plz"
-          placeholder="z. B. 80331"
+          placeholder=""
           value={fields.plz ?? ''}
           onChange={e => setFields(f => ({ ...f, plz: e.target.value }))}
         />
@@ -382,7 +382,7 @@ export function GaesteDialog({ open, onClose, onSubmit, defaultValues, recordId,
         <Label htmlFor="ort">{fieldLabel('gaeste', 'ort')}</Label>
         <Input
           id="ort"
-          placeholder="z. B. München"
+          placeholder=""
           value={fields.ort ?? ''}
           onChange={e => setFields(f => ({ ...f, ort: e.target.value }))}
         />
@@ -393,7 +393,7 @@ export function GaesteDialog({ open, onClose, onSubmit, defaultValues, recordId,
         <Label htmlFor="land">{fieldLabel('gaeste', 'land')}</Label>
         <Input
           id="land"
-          placeholder="z. B. Deutschland"
+          placeholder=""
           value={fields.land ?? ''}
           onChange={e => setFields(f => ({ ...f, land: e.target.value }))}
         />

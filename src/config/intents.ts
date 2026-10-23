@@ -43,10 +43,10 @@ export interface IntentLink {
 
 export const INTENTS: IntentLink[] = [
   // <custom:intents>
-  { path: '/intents/buchung-anlegen', label: { de: 'Buchung anlegen', en: 'Create booking' }, icon: IconCalendarPlus, description: 'Rezeption legt für einen Gast eine Buchung mit freiem Zimmer und Zusatzleistungen an.' },
-  { path: '/intents/anfrage-bearbeiten', label: { de: 'Buchungsanfrage bestätigen oder ablehnen', en: 'Process booking request' }, icon: IconCircleCheck, description: 'Offene Anfragen von der Website prüfen und bestätigen oder stornieren.' },
-  { path: '/intents/zahlung-erfassen', label: { de: 'Zahlung erfassen', en: 'Record payment' }, icon: IconCash, description: 'Für eine bestätigte Buchung Anzahlung oder vollständige Zahlung vermerken.' },
-  { path: '/intents/aufenthalt-abschliessen', label: { de: 'Aufenthalt abschließen', en: 'Complete stay' }, icon: IconCheckbox, description: 'Nach der Abreise die Buchung abschließen.' },
+  { path: '/intents/buchung-anlegen', label: { de: 'Buchung anlegen', en: 'Create booking' }, icon: IconCalendarPlus, description: { de: 'Rezeption legt für einen Gast eine Buchung mit freiem Zimmer und Zusatzleistungen an.', en: 'Reception creates a booking for a guest with an available room and extras.' } },
+  { path: '/intents/anfrage-bearbeiten', label: { de: 'Buchungsanfrage bestätigen oder ablehnen', en: 'Process booking request' }, icon: IconCircleCheck, description: { de: 'Offene Anfragen von der Website prüfen und bestätigen oder stornieren.', en: 'Review open requests from the website and confirm or cancel them.' } },
+  { path: '/intents/zahlung-erfassen', label: { de: 'Zahlung erfassen', en: 'Record payment' }, icon: IconCash, description: { de: 'Für eine bestätigte Buchung Anzahlung oder vollständige Zahlung vermerken.', en: 'Record a deposit or full payment for a confirmed booking.' } },
+  { path: '/intents/aufenthalt-abschliessen', label: { de: 'Aufenthalt abschließen', en: 'Complete stay' }, icon: IconCheckbox, description: { de: 'Nach der Abreise die Buchung abschließen.', en: 'Complete the booking after departure.' } },
   // </custom:intents>
 ];
 
@@ -66,5 +66,5 @@ export const INTENTS_PENDING = false;
  * pulsing "werden erstellt …" in every deployed Phase-1 bundle forever — no
  * code path redeploys Phase 1 without the flag (live 03.09.2026).
  */
-export const INTENTS_PENDING_SINCE: string | null = '2026-10-23T09:37:48+00:00';
+export const INTENTS_PENDING_SINCE: string | null = null;
 export const PENDING_MAX_MINUTES = 30;

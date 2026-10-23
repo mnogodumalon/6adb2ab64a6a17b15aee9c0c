@@ -404,6 +404,40 @@ if (gridIdx >= 0) {
   }
 }
 
+// 25. A change an update flow owns is never written from this page. The flow
+// records who and when (a review, a decision); a dashboard button that sets
+// the state itself bypasses that control (live 20.10.2026: „Freigeben“ set a
+// proposal to approved without reviewer or date, next to the very flow the
+// owner's prompt asked for). The page opens the flow for the record:
+// flowActionFor(entity, field, id, value) from '@/config/plan'.
+{
+  const OWNED = {};
+  const callRe = /\b(update\w+Entry)\s*\(/g;
+  let m;
+  const hits = [];
+  while ((m = callRe.exec(code))) {
+    const own = OWNED[m[1]];
+    if (!own) continue;
+    let depth = 0, j = m.index + m[0].length - 1;
+    for (; j < code.length; j++) {
+      if (code[j] === '(') depth++;
+      else if (code[j] === ')' && --depth === 0) break;
+    }
+    const args = code.slice(m.index + m[0].length, j);
+    const keys = new Set();
+    for (const k of args.matchAll(/[{,]\s*(\w+)\s*(?::|(?=[,}]))/g)) keys.add(k[1]);
+    for (const field of Object.keys(own.fields)) {
+      if (!keys.has(field)) continue;
+      const line = code.slice(0, m.index).split('\n').length;
+      const flows = own.fields[field].map(o => `„${o.slug}“${o.value !== undefined ? ` (sets '${o.value}')` : ''}`).join(', ');
+      hits.push(`${own.entity}.${field} — owned by ${flows}\n    line ${line}: ${dashLines[line - 1]}`);
+    }
+  }
+  if (hits.length) {
+    errors.push(`This page writes a field an update flow owns — the flow records who and when, a direct write bypasses it. Replace the write with the flow: \`const go = flowActionFor('<entity>', '<field>', r.record_id, '<target key>')\` (import from '@/config/plan'; null while the flow is not live) and \`action: go ? { label, onClick: go } : undefined\`; a drag calls go?.() and returns a short notice:\n  ` + hits.join('\n  '));
+  }
+}
+
 // 21. Runtime i18n: the dashboard ships its UI languages with a live
 // switcher — hardcoded UI strings stay frozen in one language. Every string
 // the agent writes is tx-marked (`{tx('…')}` — the pipeline translates) or

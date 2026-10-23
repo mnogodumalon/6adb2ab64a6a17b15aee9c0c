@@ -411,7 +411,7 @@ export function BuchungenDialog({ open, onClose, onSubmit, defaultValues, record
         <Label htmlFor="gast">{fieldLabel('buchungen', 'gast')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Combobox
           id="gast"
-          placeholder="Welcher Gast?"
+          placeholder=""
           items={gaesteListAll.map(r => ({
             id: r.record_id,
             label: String(r.fields.gast_vorname ?? r.record_id),
@@ -431,7 +431,7 @@ export function BuchungenDialog({ open, onClose, onSubmit, defaultValues, record
         <Label htmlFor="zimmer">{fieldLabel('buchungen', 'zimmer')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Combobox
           id="zimmer"
-          placeholder="Welches Zimmer?"
+          placeholder=""
           items={zimmerListAll.map(r => ({
             id: r.record_id,
             label: String(r.fields.zimmernummer ?? r.record_id),
@@ -451,7 +451,7 @@ export function BuchungenDialog({ open, onClose, onSubmit, defaultValues, record
         <Label htmlFor="anreise">{fieldLabel('buchungen', 'anreise')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <DatePicker
           id="anreise"
-          placeholder="Wann reist der Gast an?"
+          placeholder=""
           mode="date"
           value={fields.anreise ?? null}
           onChange={v => setFields(f => ({ ...f, anreise: v ?? undefined }))}
@@ -467,7 +467,7 @@ export function BuchungenDialog({ open, onClose, onSubmit, defaultValues, record
         <Label htmlFor="abreise">{fieldLabel('buchungen', 'abreise')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <DatePicker
           id="abreise"
-          placeholder="Wann reist der Gast ab?"
+          placeholder=""
           mode="date"
           value={fields.abreise ?? null}
           onChange={v => setFields(f => ({ ...f, abreise: v ?? undefined }))}
@@ -487,7 +487,7 @@ export function BuchungenDialog({ open, onClose, onSubmit, defaultValues, record
           inputMode="decimal"
           step="any"
           {...numberInputProps(formEnhancements, 'anzahl_personen')}
-          placeholder="z. B. 2"
+          placeholder=""
           value={fields.anzahl_personen !== undefined ? fields.anzahl_personen : (computedValues['anzahl_personen'] ?? '')}
           onChange={e => setFields(f => ({ ...f, anzahl_personen: clampNumberValue(formEnhancements, 'anzahl_personen', e.target.value) }))}
         />
@@ -501,7 +501,7 @@ export function BuchungenDialog({ open, onClose, onSubmit, defaultValues, record
         <Label htmlFor="zusatzleistungen">{fieldLabel('buchungen', 'zusatzleistungen')}</Label>
         <MultiCombobox
           id="zusatzleistungen"
-          placeholder="Welche Zusatzleistungen?"
+          placeholder=""
           items={zusatzleistungenListAll.map(r => ({
             id: r.record_id,
             label: String(r.fields.leistung_bezeichnung ?? r.record_id),
@@ -518,7 +518,7 @@ export function BuchungenDialog({ open, onClose, onSubmit, defaultValues, record
         <Label htmlFor="wuensche">{fieldLabel('buchungen', 'wuensche')}</Label>
         <Textarea
           id="wuensche"
-          placeholder="Wünsche, Allergien, Anreisezeit"
+          placeholder=""
           value={fields.wuensche ?? ''}
           onChange={e => setFields(f => ({ ...f, wuensche: e.target.value }))}
           rows={3}

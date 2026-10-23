@@ -56,7 +56,8 @@ export interface MapGroup {
   intent_label?: string;
 }
 
-export type LineAction = { id: 'confirm' | 'file' | string; label: string };
+/** request: `text` is the wish sent through the change door instead of the line's text, `gap` its gap/question id */
+export type LineAction = { id: 'confirm' | 'file' | string; label: string; text?: string; gap?: string };
 
 export interface MapLine {
   id: string;
@@ -76,7 +77,7 @@ export interface MapLine {
   /** policy / trigger / plan act at once, tool / page take minutes */
   speed?: 'instant' | 'minutes';
   /** a question the owner has neither answered nor confirmed nor seen */
-  tag?: 'assumed' | null;
+  tag?: 'assumed' | 'inferred' | null;
   /** setup lines: the short sentence for the dashboard's notice */
   notice?: string | null;
   /** the bold opening of the sentence without its stars — unused by the page, which renders `**…**` */

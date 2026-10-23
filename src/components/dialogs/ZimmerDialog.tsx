@@ -323,7 +323,7 @@ export function ZimmerDialog({ open, onClose, onSubmit, defaultValues, recordId,
         <Label htmlFor="zimmernummer">{fieldLabel('zimmer', 'zimmernummer')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Input
           id="zimmernummer"
-          placeholder="z. B. 101"
+          placeholder=""
           value={fields.zimmernummer ?? ''}
           onChange={e => setFields(f => ({ ...f, zimmernummer: e.target.value }))}
           required
@@ -338,7 +338,7 @@ export function ZimmerDialog({ open, onClose, onSubmit, defaultValues, recordId,
         <Label htmlFor="bezeichnung">{fieldLabel('zimmer', 'bezeichnung')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Input
           id="bezeichnung"
-          placeholder="z. B. Zimmer mit Seeblick"
+          placeholder=""
           value={fields.bezeichnung ?? ''}
           onChange={e => setFields(f => ({ ...f, bezeichnung: e.target.value }))}
           required
@@ -419,7 +419,7 @@ export function ZimmerDialog({ open, onClose, onSubmit, defaultValues, recordId,
           inputMode="decimal"
           step="any"
           {...numberInputProps(formEnhancements, 'max_personen')}
-          placeholder="z. B. 2"
+          placeholder=""
           value={fields.max_personen !== undefined ? fields.max_personen : (computedValues['max_personen'] ?? '')}
           onChange={e => setFields(f => ({ ...f, max_personen: clampNumberValue(formEnhancements, 'max_personen', e.target.value) }))}
         />
@@ -437,7 +437,7 @@ export function ZimmerDialog({ open, onClose, onSubmit, defaultValues, recordId,
           inputMode="decimal"
           step="any"
           {...numberInputProps(formEnhancements, 'preis_pro_nacht')}
-          placeholder="z. B. 89"
+          placeholder=""
           value={fields.preis_pro_nacht !== undefined ? fields.preis_pro_nacht : (computedValues['preis_pro_nacht'] ?? '')}
           onChange={e => setFields(f => ({ ...f, preis_pro_nacht: clampNumberValue(formEnhancements, 'preis_pro_nacht', e.target.value) }))}
         />
@@ -542,7 +542,7 @@ export function ZimmerDialog({ open, onClose, onSubmit, defaultValues, recordId,
         <Label htmlFor="beschreibung">{fieldLabel('zimmer', 'beschreibung')}</Label>
         <Textarea
           id="beschreibung"
-          placeholder="Was zeichnet das Zimmer aus?"
+          placeholder=""
           value={fields.beschreibung ?? ''}
           onChange={e => setFields(f => ({ ...f, beschreibung: e.target.value }))}
           rows={3}
